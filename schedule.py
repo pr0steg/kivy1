@@ -32,7 +32,19 @@ class MyApp(App):
     def my_callback(dt):
         print("My callback is called!")
 
-    Clock.schedule_once(my_callback, 5)
+    # Clock.schedule_once(my_callback, 5)
+
+    # First, schedule once.
+    # event = Clock.schedule_once(my_callback, 0)
+    #
+    # # Then, in another place you will have to unschedule first
+    # # to avoid duplicate call. Then you can schedule again.
+    # Clock.unschedule(event)
+    # event = Clock.schedule_once(my_callback, 0)
+
+    trigger = Clock.create_trigger(my_callback)
+    # later
+    trigger()
 
 
 if __name__ == '__main__':
