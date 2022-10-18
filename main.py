@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import kivy
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+kivy.require('2.1.0')  # replace with your current kivy version !
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from kivy.app import App
+from kivy.uix.label import Label
 
 
-# Press the green button in the gutter to run the script.
+class MyApp(App):
+
+    def build(self):
+        return Label(text='Hello Twitch')
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    MyApp().run()
